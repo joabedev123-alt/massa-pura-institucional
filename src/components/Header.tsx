@@ -1,27 +1,47 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    // Se rolou para baixo e passou de 150px, esconde. Se rolou para cima, mostra.
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b-4 border-brand-orange shadow-lg">
+    <motion.header 
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" }
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="sticky top-0 z-50 bg-white border-b-4 border-brand-orange shadow-lg"
+    >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/logo-Photoroom.png" alt="Massa Pura" className="h-16 object-contain" />
+            <img src="/logo-Photoroom.png" alt="Massa Pura" className="h-28 md:h-32 object-contain" />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 font-semibold text-brand-black">
             <Link to="/" className="hover:text-brand-orange transition-colors">Início</Link>
             <Link to="/sobre" className="hover:text-brand-orange transition-colors">Sobre</Link>
-            <div className="group relative">
+            <div className="group relative py-4">
               <Link to="/produtos" className="hover:text-brand-orange transition-colors flex items-center gap-1">
                 Produtos <i className="bi bi-chevron-down text-xs"></i>
               </Link>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col">
+              <div className="absolute top-full mt-0 left-0 w-48 bg-white border border-gray-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col">
                 <Link to="/produtos/ac-i" className="px-4 py-3 hover:bg-brand-light border-b text-brand-green font-bold">AC-I (Interna)</Link>
                 <Link to="/produtos/ac-ii" className="px-4 py-3 hover:bg-brand-light border-b text-brand-blue font-bold">AC-II (Cinza)</Link>
                 <Link to="/produtos/ac-iii" className="px-4 py-3 hover:bg-brand-light text-brand-red font-bold">AC-III (9 Funções)</Link>
@@ -44,7 +64,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-3xl text-brand-black"
+            className="md:hidden text-4xl text-brand-black"
             onClick={() => setIsOpen(!isOpen)}
           >
             <i className={`bi ${isOpen ? 'bi-x-lg' : 'bi-list'}`}></i>
@@ -57,7 +77,7 @@ export default function Header() {
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-white border-t p-4"
+          className="md:hidden bg-white border-t p-4 absolute w-full shadow-lg"
         >
           <div className="flex flex-col gap-4 font-semibold text-lg">
             <Link to="/" onClick={() => setIsOpen(false)}>Início</Link>
@@ -78,6 +98,6 @@ export default function Header() {
           </div>
         </motion.div>
       )}
-    </header>
+    </motion.header>
   );
 }
