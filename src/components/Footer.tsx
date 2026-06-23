@@ -84,9 +84,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-800 text-center md:flex md:justify-between md:text-left text-sm text-gray-500 font-medium">
-          <p>&copy; {new Date().getFullYear()} MASSA PURA ESQUINCALHA COM. E IND. DE ARGAMASSA LTDA. Todos os direitos reservados.</p>
-          <p className="mt-2 md:mt-0">CNPJ: 36.510.243/0001-17</p>
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-sm text-gray-500 font-medium">
+          <div>
+            <p className="mb-1">&copy; {new Date().getFullYear()} MASSA PURA ESQUINCALHA COM. E IND. DE ARGAMASSA LTDA.</p>
+            <p>Todos os direitos reservados. | CNPJ: 36.510.243/0001-17</p>
+          </div>
+          <p className="mt-2 md:mt-0 text-base">
+            Produzido com <span className="text-red-500">❤️</span> por <a href="https://camaly.com.br/" target="_blank" rel="noreferrer" className="text-brand-orange hover:text-white font-bold transition-colors">CAMALY</a>
+          </p>
         </div>
       </div>
     </footer>
