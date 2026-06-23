@@ -4,14 +4,15 @@ export default function ProdutoACI() {
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3">
-             <div className="w-full bg-black border-4 border-brand-green rounded-xl overflow-hidden flex items-center justify-center shadow-2xl">
+             <div className="w-full bg-black border-4 border-brand-green rounded-xl overflow-hidden flex items-center justify-center shadow-2xl relative">
                 <video 
                   src="/argamassaac1.mp4" 
                   autoPlay 
                   loop 
                   muted 
                   playsInline 
-                  className="w-full h-auto object-contain"
+                  controls
+                  className="w-full h-auto max-h-[70vh] object-contain"
                 />
              </div>
           </div>
