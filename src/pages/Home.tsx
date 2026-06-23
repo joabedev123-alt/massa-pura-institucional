@@ -47,7 +47,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-brand-orange/20 rounded-full blur-3xl -z-10"></div>
               <div className="w-full relative shadow-2xl rounded-lg border-4 border-brand-orange overflow-hidden bg-brand-light flex items-center justify-center">
                 <img 
-                  src="/foto hero.jpeg" 
+                  src="/fotos videos/foto hero.jpeg" 
                   alt="Argamassa Massa Pura" 
                   className="w-full h-auto object-contain"
                 />

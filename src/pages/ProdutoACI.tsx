@@ -6,7 +6,7 @@ export default function ProdutoACI() {
           <div className="w-full md:w-1/3">
              <div className="w-full bg-black border-4 border-brand-green rounded-xl overflow-hidden flex items-center justify-center shadow-2xl relative">
                 <video 
-                  src="/argamassaac1.mp4" 
+                  src="/fotos videos/argamassaac1.mp4" 
                   autoPlay 
                   loop 
                   muted 
