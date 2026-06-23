@@ -4,9 +4,16 @@ export default function ProdutoACIII() {
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3">
-             <div className="aspect-[3/4] bg-brand-black border-8 border-brand-red rounded-xl flex items-center justify-center shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-texture opacity-20"></div>
-                <span className="text-6xl font-black text-brand-red relative z-10">AC-III</span>
+             <div className="w-full bg-black border-4 border-brand-red rounded-xl overflow-hidden flex items-center justify-center shadow-2xl relative">
+                <video 
+                  src="/argamassaac3.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  controls
+                  className="w-full h-auto max-h-[70vh] object-contain"
+                />
              </div>
           </div>
           <div className="w-full md:w-2/3">
