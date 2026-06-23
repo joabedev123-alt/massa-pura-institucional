@@ -1,8 +1,8 @@
 export default function ProdutoACIII() {
   return (
-    <div className="py-24 bg-white min-h-screen">
+    <div className="py-16 md:py-24 bg-white min-h-screen">
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           <div className="w-full md:w-1/3">
              <div className="w-full bg-black border-4 border-brand-red rounded-xl overflow-hidden flex items-center justify-center shadow-2xl relative">
                 <video 
@@ -17,9 +17,9 @@ export default function ProdutoACIII() {
              </div>
           </div>
           <div className="w-full md:w-2/3">
-            <span className="bg-brand-red/10 text-brand-red px-4 py-2 rounded font-bold text-lg inline-block mb-4">Piso sobre piso e porcelanato</span>
-            <h1 className="text-5xl font-black text-brand-black mb-6 uppercase">Massa Pura <span className="text-brand-red">Tipo AC-III / 9 Funções</span></h1>
-            <p className="text-2xl text-gray-700 font-medium mb-8">
+            <span className="bg-brand-red/10 text-brand-red px-4 py-2 rounded font-bold text-sm md:text-lg inline-block mb-4">Piso sobre piso e porcelanato</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-black mb-4 md:mb-6 uppercase">Massa Pura <span className="text-brand-red">Tipo AC-III / 9 Funções</span></h1>
+            <p className="text-xl md:text-2xl text-gray-700 font-medium mb-6 md:mb-8">
               A argamassa premium com foco em alto desempenho para assentamentos exigentes.
             </p>
             

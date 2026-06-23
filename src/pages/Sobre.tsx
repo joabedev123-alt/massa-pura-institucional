@@ -1,6 +1,6 @@
 export default function Sobre() {
   return (
-    <div className="py-24 bg-white min-h-screen">
+    <div className="py-16 md:py-24 bg-white min-h-screen">
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-black text-brand-black mb-8 uppercase">Massa Pura <span className="text-brand-orange">Esquincalha</span></h1>
         <div className="w-24 h-2 bg-brand-orange mb-10"></div>
