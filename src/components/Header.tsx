@@ -28,9 +28,9 @@ export default function Header() {
       className="sticky top-0 z-50 bg-white border-b-4 border-brand-orange shadow-lg"
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-1">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/logo-Photoroom.png" alt="Massa Pura" className="h-28 md:h-32 object-contain" />
+            <img src="/logo-Photoroom.png" alt="Massa Pura" className="h-28 md:h-32 object-contain -my-4" />
           </Link>
 
           {/* Desktop Nav */}
