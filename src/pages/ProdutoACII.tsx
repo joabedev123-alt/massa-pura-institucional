@@ -4,8 +4,16 @@ export default function ProdutoACII() {
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3">
-             <div className="aspect-[3/4] bg-brand-blue/20 border-8 border-brand-blue rounded-xl flex items-center justify-center shadow-2xl">
-                <span className="text-6xl font-black text-brand-blue">AC-II</span>
+             <div className="w-full bg-black border-4 border-brand-blue rounded-xl overflow-hidden flex items-center justify-center shadow-2xl relative">
+                <video 
+                  src="/argamassaac2.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  controls
+                  className="w-full h-auto max-h-[70vh] object-contain"
+                />
              </div>
           </div>
           <div className="w-full md:w-2/3">
