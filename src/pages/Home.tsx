@@ -296,7 +296,6 @@ export default function Home() {
               <h4 className="font-bold text-brand-black uppercase">- Construtor</h4>
             </div>
           </div>
-          </div>
         </div>
       </section>
 
