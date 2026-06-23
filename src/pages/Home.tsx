@@ -296,6 +296,61 @@ export default function Home() {
               <h4 className="font-bold text-brand-black uppercase">- Construtor</h4>
             </div>
           </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dúvidas Recentes */}
+      <section className="py-16 md:py-24 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 uppercase">Dúvidas Recentes</h2>
+            <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-4 md:mb-6"></div>
+          </div>
+          
+          <div className="space-y-4">
+            <details className="group bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange cursor-pointer">
+              <summary className="font-bold text-lg flex justify-between items-center text-brand-black list-none">
+                Qual a diferença entre AC-I, AC-II e AC-III?
+                <span className="transition group-open:rotate-180">
+                  <i className="bi bi-chevron-down text-brand-orange"></i>
+                </span>
+              </summary>
+              <p className="text-gray-700 mt-4 font-medium leading-relaxed">
+                A <strong>AC-I</strong> é ideal para projetos internos. A <strong>AC-II</strong> tem maior aderência e suporta variações de umidade, sendo ideal para áreas externas. A <strong>AC-III</strong> é a mais premium, projetada para porcelanatos e aplicações de piso sobre piso.
+              </p>
+            </details>
+
+            <details className="group bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange cursor-pointer">
+              <summary className="font-bold text-lg flex justify-between items-center text-brand-black list-none">
+                Qual o rendimento médio de uma embalagem de 20kg?
+                <span className="transition group-open:rotate-180">
+                  <i className="bi bi-chevron-down text-brand-orange"></i>
+                </span>
+              </summary>
+              <p className="text-gray-700 mt-4 font-medium leading-relaxed">
+                O rendimento varia dependendo das dimensões do revestimento e da superfície, mas em média, uma embalagem rende aproximadamente 4 metros quadrados.
+              </p>
+            </details>
+
+            <details className="group bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange cursor-pointer">
+              <summary className="font-bold text-lg flex justify-between items-center text-brand-black list-none">
+                Como faço para entrar em contato ou ser um revendedor?
+                <span className="transition group-open:rotate-180">
+                  <i className="bi bi-chevron-down text-brand-orange"></i>
+                </span>
+              </summary>
+              <p className="text-gray-700 mt-4 font-medium leading-relaxed">
+                Basta clicar no botão do WhatsApp disponível em nosso site e falar diretamente com um de nossos especialistas. Estamos prontos para oferecer um atendimento personalizado!
+              </p>
+            </details>
+          </div>
+          
+          <div className="text-center mt-10">
+            <Link to="/faq" className="inline-flex items-center gap-2 font-bold text-brand-orange hover:text-brand-black transition-colors text-lg">
+              Ver todas as dúvidas <i className="bi bi-arrow-right"></i>
+            </Link>
+          </div>
         </div>
       </section>
 
