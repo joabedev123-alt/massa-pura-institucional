@@ -4,8 +4,15 @@ export default function ProdutoACI() {
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3">
-             <div className="aspect-[3/4] bg-brand-green/20 border-8 border-brand-green rounded-xl flex items-center justify-center shadow-2xl">
-                <span className="text-6xl font-black text-brand-green">AC-I</span>
+             <div className="w-full bg-black border-4 border-brand-green rounded-xl overflow-hidden flex items-center justify-center shadow-2xl">
+                <video 
+                  src="/argamassaac1.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="w-full h-auto object-contain"
+                />
              </div>
           </div>
           <div className="w-full md:w-2/3">
@@ -22,7 +29,7 @@ export default function ProdutoACI() {
               </div>
               <div className="bg-brand-light p-4 rounded-lg flex items-center gap-3 border-l-4 border-brand-green">
                 <i className="bi bi-check-circle-fill text-brand-green text-xl"></i>
-                <span className="font-bold">Bom rendimento</span>
+                <span className="font-bold">Boa qualidade</span>
               </div>
               <div className="bg-brand-light p-4 rounded-lg flex items-center gap-3 border-l-4 border-brand-green">
                 <i className="bi bi-check-circle-fill text-brand-green text-xl"></i>
@@ -39,7 +46,7 @@ export default function ProdutoACI() {
               <ul className="space-y-2 font-medium text-gray-700">
                 <li><strong>Indicação:</strong> Áreas internas</li>
                 <li><strong>Embalagem:</strong> 20kg</li>
-                <li><strong>Recomendações:</strong> Siga as instruções de preparo, aplicação e cura na embalagem.</li>
+                <li><strong>Recomendações:</strong> Siga as instruções de preparo, aplicação e cuidado na embalagem.</li>
               </ul>
             </div>
           </div>
