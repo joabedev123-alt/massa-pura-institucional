@@ -10,10 +10,10 @@ export default function ComoUsar() {
   ];
 
   return (
-    <div className="py-24 bg-brand-light min-h-screen">
+    <div className="py-16 md:py-24 bg-brand-light min-h-screen">
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-        <h1 className="text-5xl font-black text-brand-black mb-6 uppercase">Como <span className="text-brand-orange">Usar</span></h1>
-        <div className="w-24 h-2 bg-brand-orange mb-12"></div>
+        <h1 className="text-4xl md:text-5xl font-black text-brand-black mb-4 md:mb-6 uppercase">Como <span className="text-brand-orange">Usar</span></h1>
+        <div className="w-16 md:w-24 h-2 bg-brand-orange mb-10 md:mb-12"></div>
         
         <div className="space-y-6">
           {steps.map((step, index) => (

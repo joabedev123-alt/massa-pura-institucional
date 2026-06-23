@@ -31,10 +31,10 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="py-24 bg-white min-h-screen">
+    <div className="py-16 md:py-24 bg-white min-h-screen">
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
-        <h1 className="text-5xl font-black text-brand-black mb-6 uppercase text-center">Dúvidas <span className="text-brand-orange">Frequentes</span></h1>
-        <div className="w-24 h-2 bg-brand-orange mx-auto mb-16"></div>
+        <h1 className="text-4xl md:text-5xl font-black text-brand-black mb-4 md:mb-6 uppercase text-center">Dúvidas <span className="text-brand-orange">Frequentes</span></h1>
+        <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-10 md:mb-16"></div>
         
         <div className="space-y-4">
           {faqs.map((faq, index) => (

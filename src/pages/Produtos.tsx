@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 export default function Produtos() {
   return (
-    <div className="py-24 bg-brand-light min-h-screen">
+    <div className="py-16 md:py-24 bg-brand-light min-h-screen">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-black text-brand-black mb-6 uppercase">Nossos <span className="text-brand-orange">Produtos</span></h1>
-          <div className="w-24 h-2 bg-brand-orange mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto">
+        <div className="text-center mb-10 md:mb-16">
+          <h1 className="text-4xl md:text-5xl font-black text-brand-black mb-4 md:mb-6 uppercase">Nossos <span className="text-brand-orange">Produtos</span></h1>
+          <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-4 md:mb-6"></div>
+          <p className="text-lg md:text-xl text-gray-600 font-medium max-w-2xl mx-auto">
             A linha completa da Massa Pura para garantir a melhor aderência e durabilidade para a sua obra.
           </p>
         </div>

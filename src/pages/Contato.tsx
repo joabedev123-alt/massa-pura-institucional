@@ -1,9 +1,9 @@
 export default function Contato() {
   return (
-    <div className="py-24 bg-brand-light min-h-screen">
+    <div className="py-16 md:py-24 bg-brand-light min-h-screen">
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
-        <h1 className="text-5xl font-black text-brand-black mb-6 uppercase text-center">Fale <span className="text-brand-orange">Conosco</span></h1>
-        <div className="w-24 h-2 bg-brand-orange mx-auto mb-16"></div>
+        <h1 className="text-4xl md:text-5xl font-black text-brand-black mb-4 md:mb-6 uppercase text-center">Fale <span className="text-brand-orange">Conosco</span></h1>
+        <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-10 md:mb-16"></div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="bg-white p-8 rounded-xl shadow-lg border-t-8 border-brand-orange">
