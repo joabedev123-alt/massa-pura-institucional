@@ -10,9 +10,7 @@ export default function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2">
-            <div className="text-3xl font-black text-brand-black tracking-tighter">
-              MASSA PURA
-            </div>
+            <img src="/logo-Photoroom.png" alt="Massa Pura" className="h-16 object-contain" />
           </Link>
 
           {/* Desktop Nav */}
