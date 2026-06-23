@@ -7,14 +7,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="text-3xl font-black text-white tracking-tighter mb-4">
-              MASSA PURA
+            <div className="mb-4">
+              <img src="/logo-Photoroom.png" alt="Massa Pura Esquincalha" className="h-16 object-contain filter brightness-0 invert opacity-90" />
             </div>
             <p className="text-gray-400 mb-6 font-medium">
               Argamassas de alto padrão para obras com mais qualidade, rendimento e praticidade.
             </p>
             <div className="flex gap-4">
-              <a href="https://instagram.com/massapura" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
+              <a href="https://www.instagram.com/massapuraesquincalha?utm_source=qr" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
                 <i className="bi bi-instagram text-xl"></i>
               </a>
               <a href="https://facebook.com/massapura" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
