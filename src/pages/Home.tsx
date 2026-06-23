@@ -5,16 +5,16 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative bg-texture bg-brand-black text-white overflow-hidden py-24 lg:py-32">
+      <section className="relative bg-texture bg-brand-black text-white overflow-hidden py-16 md:py-24 lg:py-32">
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-shadow">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight text-shadow">
                 Argamassa de Alto Padrão para Obras com Mais <span className="text-brand-orange">Qualidade</span>, <span className="text-brand-yellow">Rendimento</span> e <span className="text-brand-green">Praticidade</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 mb-10 font-medium">
@@ -58,11 +58,11 @@ export default function Home() {
       </section>
 
       {/* O que fazemos */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-black text-brand-black mb-6 uppercase">O que fazemos</h2>
-            <p className="text-xl text-gray-600 font-medium">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 md:mb-6 uppercase">O que fazemos</h2>
+            <p className="text-lg md:text-xl text-gray-600 font-medium">
               Fabricamos e comercializamos argamassas para assentamento de revestimentos, oferecendo soluções robustas para obras residenciais, comerciais e profissionais da construção civil.
             </p>
           </div>
@@ -90,12 +90,12 @@ export default function Home() {
       </section>
 
       {/* Produtos em Destaque */}
-      <section className="py-24 bg-brand-light border-y border-gray-200">
+      <section className="py-16 md:py-24 bg-brand-light border-y border-gray-200">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-brand-black mb-4 uppercase">Nossa Linha de Produtos</h2>
-            <div className="w-24 h-2 bg-brand-orange mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 font-medium">O produto certo para cada necessidade da sua obra.</p>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 uppercase">Nossa Linha de Produtos</h2>
+            <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-4 md:mb-6"></div>
+            <p className="text-lg md:text-xl text-gray-600 font-medium">O produto certo para cada necessidade da sua obra.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
@@ -181,17 +181,17 @@ export default function Home() {
       </section>
 
       {/* Por que escolher a Massa Pura */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-white relative overflow-hidden">
         {/* Background diagonal decorative */}
-        <div className="absolute right-0 top-0 w-1/2 h-full bg-brand-light transform skew-x-12 translate-x-32 -z-10"></div>
+        <div className="absolute right-0 top-0 w-full md:w-1/2 h-full bg-brand-light transform skew-x-12 translate-x-1/2 md:translate-x-32 -z-10 opacity-50 md:opacity-100"></div>
         
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black text-brand-black mb-8 uppercase leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-black mb-6 md:mb-8 uppercase leading-tight">
                 Por que escolher a <span className="text-brand-orange">Massa Pura?</span>
               </h2>
-              <p className="text-xl text-gray-600 font-medium mb-10">
+              <p className="text-lg md:text-xl text-gray-600 font-medium mb-8 md:mb-10">
                 Os produtos Massa Pura têm qualidade, rendimento e praticidade. Nossa missão é oferecer os melhores produtos técnicos para a sua obra com um preço justo.
               </p>
               
@@ -230,36 +230,36 @@ export default function Home() {
       </section>
 
       {/* Banner Institucional */}
-      <section className="py-20 relative bg-brand-black overflow-hidden border-y-8 border-brand-orange">
+      <section className="py-16 md:py-20 relative bg-brand-black overflow-hidden border-y-8 border-brand-orange">
         <div className="absolute inset-0 bg-texture opacity-20"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-wider">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-4 md:mb-6 uppercase tracking-wider">
             Linha Completa <span className="text-brand-orange">Massa Pura</span>
           </h2>
-          <p className="text-2xl text-gray-300 font-medium max-w-4xl mx-auto mb-10">
+          <p className="text-lg md:text-2xl text-gray-300 font-medium max-w-4xl mx-auto mb-8 md:mb-10">
             Argamassas desenvolvidas para entregar qualidade, rendimento e praticidade em cada etapa da sua obra.
           </p>
-          <div className="flex justify-center items-end gap-4 md:gap-8 opacity-90 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex flex-wrap justify-center items-end gap-3 md:gap-8 opacity-90 grayscale hover:grayscale-0 transition-all duration-500">
              {/* Embalagens mockup */}
-             <div className="w-32 md:w-48 h-48 md:h-64 bg-brand-green/20 border-4 border-brand-green rounded-t flex flex-col justify-end p-4 items-center">
-                <span className="font-black text-brand-green text-xl md:text-3xl">AC-I</span>
+             <div className="w-24 sm:w-32 md:w-48 h-32 sm:h-48 md:h-64 bg-brand-green/20 border-4 border-brand-green rounded-t flex flex-col justify-end p-2 md:p-4 items-center">
+                <span className="font-black text-brand-green text-sm sm:text-xl md:text-3xl">AC-I</span>
              </div>
-             <div className="w-40 md:w-56 h-56 md:h-72 bg-brand-blue/20 border-4 border-brand-blue rounded-t flex flex-col justify-end p-4 items-center scale-110 relative z-10 shadow-2xl">
-                <span className="font-black text-brand-blue text-2xl md:text-4xl">AC-II</span>
+             <div className="w-28 sm:w-40 md:w-56 h-40 sm:h-56 md:h-72 bg-brand-blue/20 border-4 border-brand-blue rounded-t flex flex-col justify-end p-2 md:p-4 items-center scale-110 relative z-10 shadow-2xl">
+                <span className="font-black text-brand-blue text-base sm:text-2xl md:text-4xl">AC-II</span>
              </div>
-             <div className="w-32 md:w-48 h-48 md:h-64 bg-brand-red/20 border-4 border-brand-red rounded-t flex flex-col justify-end p-4 items-center">
-                <span className="font-black text-brand-red text-xl md:text-3xl">AC-III</span>
+             <div className="w-24 sm:w-32 md:w-48 h-32 sm:h-48 md:h-64 bg-brand-red/20 border-4 border-brand-red rounded-t flex flex-col justify-end p-2 md:p-4 items-center">
+                <span className="font-black text-brand-red text-sm sm:text-xl md:text-3xl">AC-III</span>
              </div>
           </div>
         </div>
       </section>
       
       {/* Depoimentos */}
-      <section className="py-24 bg-brand-light">
+      <section className="py-16 md:py-24 bg-brand-light">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-brand-black mb-4 uppercase">Quem usa, aprova.</h2>
-            <div className="w-24 h-2 bg-brand-orange mx-auto mb-6"></div>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 uppercase">Quem usa, aprova.</h2>
+            <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-4 md:mb-6"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
