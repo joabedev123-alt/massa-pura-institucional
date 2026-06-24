@@ -90,7 +90,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end"
+                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end md:mr-16 lg:mr-24"
               >
                 <a 
                   href="https://wa.me/5521978958281" 

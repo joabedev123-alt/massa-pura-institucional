@@ -17,10 +17,10 @@ export default function Footer() {
               <a href="https://www.instagram.com/massapuraesquincalha?utm_source=qr" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
                 <i className="bi bi-instagram text-xl"></i>
               </a>
-              <a href="https://facebook.com/massapura" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61552290323466&mibextid=wwXIfr" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
                 <i className="bi bi-facebook text-xl"></i>
               </a>
-              <a href="https://m.youtube.com/@MassaPuraEsquincalhaArgamassa?ra=m&fbclid=PAZnRzaASnwjhleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafMvzVx2D65Lhg2prZR_NXSwLmvhCl6ofgJwJYFEOVE19TEYCxe4nNbwaDC5w_aem_VADShyUL9S-1JszDD-wdvw" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
+              <a href="https://m.youtube.com/@MassaPuraEsquincalhaArgamassa?ra=m&fbclid=PAZnRzaASpIvVleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeezeaKrk1FzewHsImr16QPoJ346sCgZ6vTjRFLqro0HLLR7HITcWfX8CUEFw_aem_WC_lqH_SUKa4wsgl2pQR6g" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-brand-orange transition-colors">
                 <i className="bi bi-youtube text-xl"></i>
               </a>
             </div>
