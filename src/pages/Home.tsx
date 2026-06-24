@@ -61,7 +61,7 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center bg-no-repeat bg-brand-black text-white overflow-hidden py-16 md:py-32 lg:py-40"
-        style={{ backgroundImage: "url('/fundo%20hero.png')" }}
+        style={{ backgroundImage: "url('/fundo_novo.png')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-black/90 via-black/70 md:via-black/50 to-black/30 md:to-transparent z-0"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -354,9 +354,9 @@ export default function Home() {
 
             {/* Rejunte */}
             <div className="bg-brand-light rounded-xl overflow-hidden shadow-lg border-t-8 border-brand-yellow flex flex-col group hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
-              <div className="h-48 md:h-56 bg-gray-200 relative overflow-hidden flex items-center justify-center">
-                 <img src="/rejunte.png" alt="Rejuntes Especiais" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <div className="h-40 md:h-48 bg-white relative overflow-hidden flex items-center justify-center">
+                 <img src="/argamassas/rejunte.png" alt="Rejuntes Especiais" className="w-4/5 h-4/5 object-contain group-hover:scale-105 transition-transform duration-500" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
                  <h3 className="absolute bottom-4 left-6 text-2xl font-black text-white">Rejuntes Especiais</h3>
               </div>
               <div className="p-6 md:p-8 flex-grow flex flex-col">
