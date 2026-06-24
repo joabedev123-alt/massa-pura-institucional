@@ -59,55 +59,52 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative bg-texture bg-brand-black text-white overflow-hidden py-16 md:py-24 lg:py-32">
-        <div className="absolute inset-0 bg-black/60 z-0"></div>
+      <section 
+        className="relative bg-cover bg-center bg-no-repeat bg-brand-black text-white overflow-hidden py-16 md:py-32 lg:py-40"
+        style={{ backgroundImage: "url('/fundo%20hero.png')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-black/90 via-black/70 md:via-black/50 to-black/30 md:to-transparent z-0"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="flex flex-row items-center gap-4 md:gap-8 lg:gap-12">
-            <motion.div 
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-1/3 md:w-2/5 lg:w-1/2 flex-shrink-0"
-            >
-              <div className="absolute -inset-4 bg-brand-orange/20 rounded-full blur-3xl -z-10 hidden md:block"></div>
-              <div className="w-full lg:w-1/2 mx-auto relative shadow-none md:shadow-xl rounded-lg border-0 md:border-2 lg:border-4 border-brand-orange overflow-hidden bg-transparent md:bg-brand-light flex items-center justify-center">
-                <img 
-                  src="/fotos videos/avatar" 
-                  alt="Avatar" 
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="w-2/3 md:w-3/5 lg:w-1/2"
-            >
-              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-6 leading-tight text-shadow">
+          <div className="flex flex-col justify-center min-h-[60vh]">
+            <div className="w-full md:w-4/5 lg:w-1/2 md:ml-auto text-center md:text-right mt-16 md:mt-0">
+              <motion.h1 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight drop-shadow-2xl text-white"
+              >
                 Argamassa de Alto Padrão para Obras com Mais <span className="text-brand-orange">Qualidade</span>, <span className="text-brand-yellow">Rendimento</span> e <span className="text-brand-green">Praticidade</span>
-              </h1>
-              <p className="text-xs sm:text-base md:text-xl text-gray-200 mb-6 md:mb-10 font-medium leading-relaxed">
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-base sm:text-lg md:text-2xl text-gray-100 mb-8 md:mb-10 font-medium leading-relaxed drop-shadow-md"
+              >
                 Linha completa de argamassas Massa Pura para áreas internas, externas, porcelanatos, cerâmicas, pisos e revestimentos profissionais.
-              </p>
-              <div className="flex flex-col xl:flex-row gap-3 md:gap-4">
+              </motion.p>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end"
+              >
                 <a 
                   href="https://wa.me/5521978958281" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="bg-green-500 hover:bg-green-600 text-white px-3 md:px-8 py-3 md:py-4 rounded-md font-bold text-xs sm:text-sm md:text-lg flex items-center justify-center gap-2 transition-colors shadow-lg text-center"
+                  className="bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(40,167,69,0.4)] text-center"
                 >
-                  <i className="bi bi-whatsapp text-lg md:text-2xl"></i> Falar no WhatsApp
+                  <i className="bi bi-whatsapp text-xl md:text-2xl"></i> Falar no WhatsApp
                 </a>
                 <Link 
                   to="/produtos"
-                  className="bg-transparent border-2 border-white hover:bg-white hover:text-brand-black text-white px-3 md:px-8 py-3 md:py-4 rounded-md font-bold text-xs sm:text-sm md:text-lg flex items-center justify-center gap-2 transition-all text-center"
+                  className="bg-transparent border-2 border-white hover:bg-white hover:text-brand-black text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-1 hover:shadow-xl text-center"
                 >
                   Ver Produtos
                 </Link>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -358,17 +355,17 @@ export default function Home() {
             {/* Rejunte */}
             <div className="bg-brand-light rounded-xl overflow-hidden shadow-lg border-t-8 border-brand-yellow flex flex-col group hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
               <div className="h-48 md:h-56 bg-gray-200 relative overflow-hidden flex items-center justify-center">
-                 <i className="bi bi-grid-3x3-gap-fill text-6xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                 <img src="/rejunte.png" alt="Rejuntes Especiais" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                  <h3 className="absolute bottom-4 left-6 text-2xl font-black text-white">Rejuntes Especiais</h3>
               </div>
               <div className="p-6 md:p-8 flex-grow flex flex-col">
                 <p className="text-gray-700 font-medium mb-6 text-lg">
-                  Acabamento impecável para pisos e revestimentos. Disponível em diversas cores, com fórmula premium para máxima proteção.
+                  Acabamento impecável para pisos e revestimentos. Disponível em diversos núcleos, com fórmula premium para proteção máxima.
                 </p>
                 <ul className="space-y-3 font-semibold text-gray-700 mb-8 mt-auto">
                   <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Ação antimofo e fungicida</li>
-                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Cores duradouras que não desbotam</li>
+                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Cores fortes que não desbotam</li>
                   <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Proteção extra contra umidade</li>
                 </ul>
                 <a href="https://wa.me/5521978958281" target="_blank" rel="noreferrer" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-yellow hover:text-black transition-colors">
