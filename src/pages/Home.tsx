@@ -180,6 +180,8 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* Por que escolher a Massa Pura */}
       <section className="py-16 md:py-24 bg-white relative overflow-hidden">
         {/* Background diagonal decorative */}
@@ -239,17 +241,10 @@ export default function Home() {
           <p className="text-lg md:text-2xl text-gray-300 font-medium max-w-4xl mx-auto mb-8 md:mb-10">
             Argamassas desenvolvidas para entregar qualidade, rendimento e praticidade em cada etapa da sua obra.
           </p>
-          <div className="flex flex-wrap justify-center items-end gap-3 md:gap-8 opacity-90 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Embalagens mockup */}
-             <div className="w-24 sm:w-32 md:w-48 h-32 sm:h-48 md:h-64 bg-brand-green/20 border-4 border-brand-green rounded-t flex flex-col justify-end p-2 md:p-4 items-center">
-                <span className="font-black text-brand-green text-sm sm:text-xl md:text-3xl">AC-I</span>
-             </div>
-             <div className="w-28 sm:w-40 md:w-56 h-40 sm:h-56 md:h-72 bg-brand-blue/20 border-4 border-brand-blue rounded-t flex flex-col justify-end p-2 md:p-4 items-center scale-110 relative z-10 shadow-2xl">
-                <span className="font-black text-brand-blue text-base sm:text-2xl md:text-4xl">AC-II</span>
-             </div>
-             <div className="w-24 sm:w-32 md:w-48 h-32 sm:h-48 md:h-64 bg-brand-red/20 border-4 border-brand-red rounded-t flex flex-col justify-end p-2 md:p-4 items-center">
-                <span className="font-black text-brand-red text-sm sm:text-xl md:text-3xl">AC-III</span>
-             </div>
+          <div className="flex flex-wrap justify-center items-end gap-6 md:gap-10 transition-all duration-500">
+             <img src="/argamassas/argamassa ac1.png" alt="Argamassa AC-I" className="w-32 sm:w-48 md:w-64 h-auto object-cover bg-white rounded-xl shadow-xl border-b-4 border-brand-green hover:scale-105 transition-transform" />
+             <img src="/argamassas/argamassa ac2.png" alt="Argamassa AC-II" className="w-40 sm:w-56 md:w-80 h-auto object-cover bg-white rounded-xl shadow-2xl scale-110 relative z-10 border-b-4 border-brand-blue hover:scale-105 transition-transform" />
+             <img src="/argamassas/argamassaac3.png" alt="Argamassa AC-III" className="w-32 sm:w-48 md:w-64 h-auto object-cover bg-white rounded-xl shadow-xl border-b-4 border-brand-red hover:scale-105 transition-transform" />
           </div>
         </div>
       </section>

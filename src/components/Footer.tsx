@@ -4,11 +4,11 @@ export default function Footer() {
   return (
     <footer className="bg-brand-black text-white pt-16 pb-8 border-t-8 border-brand-orange">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-center md:text-left">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <div className="mb-4">
-              <img src="/logo-Photoroom.png" alt="Massa Pura Esquincalha" className="h-16 object-contain filter brightness-0 invert opacity-90" />
+              <img src="/fotos videos/logo-Photoroom.png" alt="Massa Pura Esquincalha" className="h-24 md:h-28 object-contain" />
             </div>
             <p className="text-gray-400 mb-6 font-medium">
               Argamassas de alto padrão para obras com mais qualidade, rendimento e praticidade.
@@ -84,12 +84,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-sm text-gray-500 font-medium">
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-start gap-6 md:gap-12 text-center md:text-left text-sm text-gray-500 font-medium">
           <div>
             <p className="mb-1">&copy; {new Date().getFullYear()} MASSA PURA ESQUINCALHA COM. E IND. DE ARGAMASSA LTDA.</p>
             <p>Todos os direitos reservados. | CNPJ: 36.510.243/0001-17</p>
           </div>
-          <p className="mt-2 md:mt-0 text-base">
+          <p className="mt-2 md:mt-0 text-base md:mr-auto">
             Produzido com <span className="text-red-500">❤️</span> por <a href="https://camaly.com.br/" target="_blank" rel="noreferrer" className="text-brand-orange hover:text-white font-bold transition-colors">CAMALY</a>
           </p>
         </div>
