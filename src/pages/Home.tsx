@@ -26,7 +26,8 @@ export default function Home() {
       borderClass: 'border-brand-green',
       hoverClass: 'hover:bg-brand-green',
       desc: 'Ideal para cerâmicas, azulejos, pastilhas e lajotas em ambientes internos. Melhor custo-benefício.',
-      features: ['Fácil aplicação', 'Alto rendimento', 'Embalagem 20kg'],
+      features: ['Fácil aplicação', 'Alto rendimento', '20kg'],
+      image: '/argamassas/argamassa ac1.png',
       link: '/produtos/ac-i'
     },
     {
@@ -39,7 +40,8 @@ export default function Home() {
       borderClass: 'border-brand-blue',
       hoverClass: 'hover:bg-brand-blue',
       desc: 'Alta resistência para pisos, paredes, garagens e ambientes úmidos.',
-      features: ['Maior aderência', 'Para ambientes úmidos', 'Embalagem 20kg'],
+      features: ['Maior aderência', 'Para ambientes úmidos', '20kg'],
+      image: '/argamassas/argamassa ac2.png',
       link: '/produtos/ac-ii'
     },
     {
@@ -52,7 +54,8 @@ export default function Home() {
       borderClass: 'border-brand-red',
       hoverClass: 'hover:bg-brand-red',
       desc: 'Máximo desempenho para porcelanatos, mármores, granitos e piso sobre piso.',
-      features: ['Piso sobre piso', 'Porcelanatos premium', 'Embalagem 20kg'],
+      features: ['Piso sobre piso', 'Porcelanatos premium', '20kg'],
+      image: '/argamassas/argamassaac3.png',
       link: '/produtos/ac-iii'
     }
   ];
@@ -142,12 +145,12 @@ export default function Home() {
       </section>
 
       {/* Produtos em Destaque */}
-      <section className="py-16 md:py-24 bg-brand-light border-y border-gray-200">
+      <section className="py-16 md:py-24 bg-brand-black border-y border-gray-800">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 uppercase">Nossa Linha de Produtos</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 uppercase">Nossa Linha de Produtos</h2>
             <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-4 md:mb-6"></div>
-            <p className="text-lg md:text-xl text-gray-600 font-medium">O produto certo para cada necessidade da sua obra.</p>
+            <p className="text-lg md:text-xl text-gray-300 font-medium">O produto certo para cada necessidade da sua obra.</p>
           </div>
 
           {/* Desktop Grid */}
@@ -162,14 +165,19 @@ export default function Home() {
                      </div>
                      <i className={`bi ${produto.icon} text-3xl ${produto.colorClass} opacity-50`}></i>
                    </div>
-                   <p className="text-gray-600 font-medium mb-6">
+                   <p className="text-gray-600 font-medium mb-8">
                      {produto.desc}
                    </p>
-                   <ul className="space-y-2 font-semibold text-gray-700 mb-8">
-                     {produto.features.map((feature, i) => (
-                       <li key={i} className="flex items-center gap-2"><i className={`bi bi-check-circle-fill ${produto.colorClass}`}></i> {feature}</li>
-                     ))}
-                   </ul>
+                   <div className="flex justify-between items-center gap-4 mt-auto">
+                     <ul className="space-y-3 font-semibold text-gray-700 flex-grow">
+                       {produto.features.map((feature, i) => (
+                         <li key={i} className="flex items-center gap-2"><i className={`bi bi-check-circle-fill ${produto.colorClass}`}></i> {feature}</li>
+                       ))}
+                     </ul>
+                     <div className="w-24 h-32 md:w-32 md:h-40 flex-shrink-0">
+                       <img src={produto.image} alt={produto.title} className="w-full h-full object-contain drop-shadow-lg hover:scale-105 transition-transform" />
+                     </div>
+                   </div>
                  </div>
                  <div className="p-6 bg-gray-50 border-t border-gray-100">
                    <Link to={produto.link} className={`block w-full py-3 text-center bg-brand-black text-white font-bold rounded ${produto.hoverClass} transition-colors`}>
@@ -198,14 +206,19 @@ export default function Home() {
                            </div>
                            <i className={`bi ${produto.icon} text-2xl ${produto.colorClass} opacity-50`}></i>
                          </div>
-                         <p className="text-gray-600 font-medium mb-6 text-sm">
+                         <p className="text-gray-600 font-medium mb-8 text-sm">
                            {produto.desc}
                          </p>
-                         <ul className="space-y-2 font-semibold text-gray-700 mb-6 text-sm">
-                           {produto.features.map((feature, i) => (
-                             <li key={i} className="flex items-center gap-2"><i className={`bi bi-check-circle-fill ${produto.colorClass}`}></i> {feature}</li>
-                           ))}
-                         </ul>
+                         <div className="flex justify-between items-center gap-4 mt-auto">
+                           <ul className="space-y-3 font-semibold text-gray-700 text-sm flex-grow">
+                             {produto.features.map((feature, i) => (
+                               <li key={i} className="flex items-center gap-2"><i className={`bi bi-check-circle-fill ${produto.colorClass}`}></i> {feature}</li>
+                             ))}
+                           </ul>
+                           <div className="w-24 h-32 flex-shrink-0">
+                             <img src={produto.image} alt={produto.title} className="w-full h-full object-contain drop-shadow-lg hover:scale-105 transition-transform" />
+                           </div>
+                         </div>
                        </div>
                        <div className="p-4 bg-gray-50 border-t border-gray-100 mt-auto">
                          <Link to={produto.link} className={`block w-full py-3 text-center bg-brand-black text-white font-bold rounded ${produto.hoverClass} transition-colors`}>
@@ -331,47 +344,74 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
             {/* Massa Pronta */}
-            <div className="bg-brand-light rounded-xl overflow-hidden shadow-lg border-t-8 border-brand-orange flex flex-col group hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
-              <div className="h-48 md:h-56 bg-gray-200 relative overflow-hidden flex items-center justify-center">
-                 <i className="bi bi-bricks text-6xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                 <h3 className="absolute bottom-4 left-6 text-2xl font-black text-white">Massa Pronta</h3>
-              </div>
-              <div className="p-6 md:p-8 flex-grow flex flex-col">
-                <p className="text-gray-700 font-medium mb-6 text-lg">
-                  Mistura homogênea e de alta qualidade, pronta para uso. Ideal para assentamento de tijolos, blocos e pequenos reparos estruturais.
-                </p>
-                <ul className="space-y-3 font-semibold text-gray-700 mb-8 mt-auto">
-                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-orange text-xl"></i> Ganho de tempo na obra</li>
-                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-orange text-xl"></i> Redução de desperdício</li>
-                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-orange text-xl"></i> Alta resistência e aderência</li>
-                </ul>
-                <a href="https://wa.me/5521978958281" target="_blank" rel="noreferrer" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-orange transition-colors">
-                  Solicitar Orçamento
-                </a>
-              </div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-xl border-t-8 border-brand-orange flex flex-col group relative hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
+                 <div className="p-8 flex-grow flex flex-col">
+                   <div className="flex justify-between items-start mb-6">
+                     <div>
+                       <h3 className="text-2xl font-black text-brand-black mb-1">Massa Pronta</h3>
+                       <span className="bg-brand-orange/10 text-brand-orange px-3 py-1 rounded font-bold text-sm">Pronta para uso</span>
+                     </div>
+                     <i className="bi bi-bricks text-3xl text-brand-orange opacity-50"></i>
+                   </div>
+                   <p className="text-gray-600 font-medium mb-8">
+                     Mistura consistente e de alta qualidade, pronta para uso. Ideal para assentamento de tijolos, blocos e pequenos reparos estruturais.
+                   </p>
+                   <div className="flex justify-between items-center gap-4 mt-auto">
+                     <ul className="space-y-3 font-semibold text-gray-700 flex-grow">
+                       <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-orange"></i> Ganho de tempo na obra</li>
+                       <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-orange"></i> Redução de desperdício</li>
+                       <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-orange"></i> Alta resistência e aderência</li>
+                     </ul>
+                   </div>
+                 </div>
+                 <div className="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                   <a href="https://wa.me/5521978958281" target="_blank" rel="noreferrer" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-orange transition-colors">
+                     Solicitar Orçamento
+                   </a>
+                 </div>
             </div>
 
             {/* Rejunte */}
-            <div className="bg-brand-light rounded-xl overflow-hidden shadow-lg border-t-8 border-brand-yellow flex flex-col group hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
-              <div className="h-40 md:h-48 bg-white relative overflow-hidden flex items-center justify-center">
-                 <img src="/argamassas/rejunte.png" alt="Rejuntes Especiais" className="w-4/5 h-4/5 object-contain group-hover:scale-105 transition-transform duration-500" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                 <h3 className="absolute bottom-4 left-6 text-2xl font-black text-white">Rejuntes Especiais</h3>
-              </div>
-              <div className="p-6 md:p-8 flex-grow flex flex-col">
-                <p className="text-gray-700 font-medium mb-6 text-lg">
-                  Acabamento impecável para pisos e revestimentos. Disponível em diversos núcleos, com fórmula premium para proteção máxima.
-                </p>
-                <ul className="space-y-3 font-semibold text-gray-700 mb-8 mt-auto">
-                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Ação antimofo e fungicida</li>
-                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Cores fortes que não desbotam</li>
-                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Proteção extra contra umidade</li>
-                </ul>
-                <a href="https://wa.me/5521978958281" target="_blank" rel="noreferrer" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-yellow hover:text-black transition-colors">
-                  Solicitar Orçamento
-                </a>
-              </div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-xl border-t-8 border-brand-yellow flex flex-col group relative hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
+                 <div className="p-8 flex-grow flex flex-col">
+                   <div className="flex justify-between items-start mb-6">
+                     <div>
+                       <h3 className="text-2xl font-black text-brand-black mb-1">Rejuntes Especiais</h3>
+                       <span className="bg-brand-yellow/10 text-brand-yellow px-3 py-1 rounded font-bold text-sm">Acabamento</span>
+                     </div>
+                     <i className="bi bi-grid-3x3-gap-fill text-3xl text-brand-yellow opacity-50"></i>
+                   </div>
+                   <p className="text-gray-600 font-medium mb-4">
+                     Acabamento impecável para pisos e revestimentos. Disponível em diversas cores, com fórmula premium para proteção máxima.
+                   </p>
+                   
+                   <div className="mb-6">
+                     <span className="text-sm font-bold text-gray-800 block mb-2">Cores disponíveis:</span>
+                     <div className="flex flex-wrap gap-1.5">
+                       {['Bege', 'Branco', 'Caramelo', 'Cinza', 'Cinza Platina', 'Marfim', 'Marrom', 'Marrom Café', 'Preto Absoluto', 'Preto Grafite'].map((cor) => (
+                         <span key={cor} className="text-[10px] sm:text-xs font-bold bg-gray-100 text-gray-700 px-2 py-1 rounded border border-gray-200 shadow-sm">
+                           {cor}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
+
+                   <div className="flex justify-between items-center gap-4 mt-auto">
+                     <ul className="space-y-3 font-semibold text-gray-700 flex-grow text-sm">
+                       <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-yellow"></i> Ação antimofo e fungicida</li>
+                       <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-yellow"></i> Cores fortes que não desbotam</li>
+                       <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-yellow"></i> Proteção extra contra umidade</li>
+                     </ul>
+                     <div className="w-20 h-28 md:w-28 md:h-36 flex-shrink-0">
+                       <img src="/argamassas/rejunte.png" alt="Rejuntes Especiais" className="w-full h-full object-contain drop-shadow-lg hover:scale-105 transition-transform" />
+                     </div>
+                   </div>
+                 </div>
+                 <div className="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                   <a href="https://wa.me/5521978958281" target="_blank" rel="noreferrer" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-yellow hover:text-black transition-colors">
+                     Solicitar Orçamento
+                   </a>
+                 </div>
             </div>
           </div>
         </div>
