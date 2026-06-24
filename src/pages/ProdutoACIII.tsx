@@ -3,10 +3,21 @@ export default function ProdutoACIII() {
     <div className="py-16 md:py-24 bg-white min-h-screen">
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-1/3 flex flex-col gap-6">
              <div className="w-full bg-black border-4 border-brand-red rounded-xl overflow-hidden flex items-center justify-center shadow-2xl relative">
                 <video 
                   src="/fotos videos/argamassaac3.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  controls
+                  className="w-full h-auto max-h-[70vh] object-contain"
+                />
+             </div>
+             <div className="w-full bg-black border-4 border-brand-orange rounded-xl overflow-hidden flex items-center justify-center shadow-2xl relative">
+                <video 
+                  src="/fotos videos/duvidas.mp4" 
                   autoPlay 
                   loop 
                   muted 

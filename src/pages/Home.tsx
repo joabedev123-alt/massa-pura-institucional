@@ -1,56 +1,111 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 3);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % 3);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + 3) % 3);
+
+  const produtosDestaque = [
+    {
+      id: 1,
+      title: 'Massa Pura AC-I',
+      tag: 'Áreas Internas',
+      icon: 'bi-house-door',
+      colorClass: 'text-brand-green',
+      bgLightClass: 'bg-brand-green/10',
+      borderClass: 'border-brand-green',
+      hoverClass: 'hover:bg-brand-green',
+      desc: 'Ideal para cerâmicas, azulejos, pastilhas e lajotas em ambientes internos. Melhor custo-benefício.',
+      features: ['Fácil aplicação', 'Alto rendimento', 'Embalagem 20kg'],
+      link: '/produtos/ac-i'
+    },
+    {
+      id: 2,
+      title: 'Massa Pura AC-II',
+      tag: 'Interna e Externa',
+      icon: 'bi-building',
+      colorClass: 'text-brand-blue',
+      bgLightClass: 'bg-brand-blue/10',
+      borderClass: 'border-brand-blue',
+      hoverClass: 'hover:bg-brand-blue',
+      desc: 'Alta resistência para pisos, paredes, garagens e ambientes úmidos.',
+      features: ['Maior aderência', 'Para ambientes úmidos', 'Embalagem 20kg'],
+      link: '/produtos/ac-ii'
+    },
+    {
+      id: 3,
+      title: 'Massa Pura AC-III',
+      tag: '9 Funções Premium',
+      icon: 'bi-gem',
+      colorClass: 'text-brand-red',
+      bgLightClass: 'bg-brand-red/10',
+      borderClass: 'border-brand-red',
+      hoverClass: 'hover:bg-brand-red',
+      desc: 'Máximo desempenho para porcelanatos, mármores, granitos e piso sobre piso.',
+      features: ['Piso sobre piso', 'Porcelanatos premium', 'Embalagem 20kg'],
+      link: '/produtos/ac-iii'
+    }
+  ];
   return (
     <div className="w-full">
       {/* Hero Section */}
       <section className="relative bg-texture bg-brand-black text-white overflow-hidden py-16 md:py-24 lg:py-32">
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight text-shadow">
-                Argamassa de Alto Padrão para Obras com Mais <span className="text-brand-orange">Qualidade</span>, <span className="text-brand-yellow">Rendimento</span> e <span className="text-brand-green">Praticidade</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 mb-10 font-medium">
-                Linha completa de argamassas Massa Pura para áreas internas, externas, porcelanatos, cerâmicas, pisos e revestimentos profissionais.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="https://wa.me/5521978958281" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-md font-bold text-lg flex items-center justify-center gap-3 transition-colors shadow-lg"
-                >
-                  <i className="bi bi-whatsapp text-2xl"></i> Falar no WhatsApp
-                </a>
-                <Link 
-                  to="/produtos"
-                  className="bg-transparent border-2 border-white hover:bg-white hover:text-brand-black text-white px-8 py-4 rounded-md font-bold text-lg flex items-center justify-center gap-3 transition-all"
-                >
-                  Ver Produtos
-                </Link>
-              </div>
-            </motion.div>
-            
+          <div className="flex flex-row items-center gap-4 md:gap-8 lg:gap-12">
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
+              className="relative w-1/3 md:w-2/5 lg:w-1/2 flex-shrink-0"
             >
-              <div className="absolute -inset-4 bg-brand-orange/20 rounded-full blur-3xl -z-10"></div>
-              <div className="w-full relative shadow-2xl rounded-lg border-4 border-brand-orange overflow-hidden bg-brand-light flex items-center justify-center">
+              <div className="absolute -inset-4 bg-brand-orange/20 rounded-full blur-3xl -z-10 hidden md:block"></div>
+              <div className="w-full lg:w-1/2 mx-auto relative shadow-none md:shadow-xl rounded-lg border-0 md:border-2 lg:border-4 border-brand-orange overflow-hidden bg-transparent md:bg-brand-light flex items-center justify-center">
                 <img 
-                  src="/fotos videos/foto hero.jpeg" 
-                  alt="Argamassa Massa Pura" 
+                  src="/fotos videos/avatar" 
+                  alt="Avatar" 
                   className="w-full h-auto object-contain"
                 />
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="w-2/3 md:w-3/5 lg:w-1/2"
+            >
+              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-6 leading-tight text-shadow">
+                Argamassa de Alto Padrão para Obras com Mais <span className="text-brand-orange">Qualidade</span>, <span className="text-brand-yellow">Rendimento</span> e <span className="text-brand-green">Praticidade</span>
+              </h1>
+              <p className="text-xs sm:text-base md:text-xl text-gray-200 mb-6 md:mb-10 font-medium leading-relaxed">
+                Linha completa de argamassas Massa Pura para áreas internas, externas, porcelanatos, cerâmicas, pisos e revestimentos profissionais.
+              </p>
+              <div className="flex flex-col xl:flex-row gap-3 md:gap-4">
+                <a 
+                  href="https://wa.me/5521978958281" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="bg-green-500 hover:bg-green-600 text-white px-3 md:px-8 py-3 md:py-4 rounded-md font-bold text-xs sm:text-sm md:text-lg flex items-center justify-center gap-2 transition-colors shadow-lg text-center"
+                >
+                  <i className="bi bi-whatsapp text-lg md:text-2xl"></i> Falar no WhatsApp
+                </a>
+                <Link 
+                  to="/produtos"
+                  className="bg-transparent border-2 border-white hover:bg-white hover:text-brand-black text-white px-3 md:px-8 py-3 md:py-4 rounded-md font-bold text-xs sm:text-sm md:text-lg flex items-center justify-center gap-2 transition-all text-center"
+                >
+                  Ver Produtos
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -98,83 +153,100 @@ export default function Home() {
             <p className="text-lg md:text-xl text-gray-600 font-medium">O produto certo para cada necessidade da sua obra.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            {/* Produto 1 - AC-I */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-xl border-t-8 border-brand-green flex flex-col group relative">
-               <div className="p-8 flex-grow">
-                 <div className="flex justify-between items-start mb-6">
-                   <div>
-                     <h3 className="text-2xl font-black text-brand-black mb-1">Massa Pura AC-I</h3>
-                     <span className="bg-brand-green/10 text-brand-green px-3 py-1 rounded font-bold text-sm">Áreas Internas</span>
+          {/* Desktop Grid */}
+          <div className="hidden md:grid grid-cols-3 gap-10">
+            {produtosDestaque.map((produto, index) => (
+              <div key={produto.id} className={`bg-white rounded-xl overflow-hidden shadow-xl border-t-8 ${produto.borderClass} flex flex-col group relative ${index === 1 ? 'transform md:-translate-y-4' : ''}`}>
+                 <div className="p-8 flex-grow">
+                   <div className="flex justify-between items-start mb-6">
+                     <div>
+                       <h3 className="text-2xl font-black text-brand-black mb-1">{produto.title}</h3>
+                       <span className={`${produto.bgLightClass} ${produto.colorClass} px-3 py-1 rounded font-bold text-sm`}>{produto.tag}</span>
+                     </div>
+                     <i className={`bi ${produto.icon} text-3xl ${produto.colorClass} opacity-50`}></i>
                    </div>
-                   <i className="bi bi-house-door text-3xl text-brand-green opacity-50"></i>
+                   <p className="text-gray-600 font-medium mb-6">
+                     {produto.desc}
+                   </p>
+                   <ul className="space-y-2 font-semibold text-gray-700 mb-8">
+                     {produto.features.map((feature, i) => (
+                       <li key={i} className="flex items-center gap-2"><i className={`bi bi-check-circle-fill ${produto.colorClass}`}></i> {feature}</li>
+                     ))}
+                   </ul>
                  </div>
-                 <p className="text-gray-600 font-medium mb-6">
-                   Ideal para cerâmicas, azulejos, pastilhas e lajotas em ambientes internos. Melhor custo-benefício.
-                 </p>
-                 <ul className="space-y-2 font-semibold text-gray-700 mb-8">
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-green"></i> Fácil aplicação</li>
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-green"></i> Alto rendimento</li>
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-green"></i> Embalagem 20kg</li>
-                 </ul>
-               </div>
-               <div className="p-6 bg-gray-50 border-t border-gray-100">
-                 <Link to="/produtos/ac-i" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-green transition-colors">
-                   Ver Detalhes do Produto
-                 </Link>
-               </div>
-            </div>
+                 <div className="p-6 bg-gray-50 border-t border-gray-100">
+                   <Link to={produto.link} className={`block w-full py-3 text-center bg-brand-black text-white font-bold rounded ${produto.hoverClass} transition-colors`}>
+                     Ver Detalhes do Produto
+                   </Link>
+                 </div>
+              </div>
+            ))}
+          </div>
 
-            {/* Produto 2 - AC-II */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-xl border-t-8 border-brand-blue flex flex-col group relative transform md:-translate-y-4">
-               <div className="p-8 flex-grow">
-                 <div className="flex justify-between items-start mb-6">
-                   <div>
-                     <h3 className="text-2xl font-black text-brand-black mb-1">Massa Pura AC-II</h3>
-                     <span className="bg-brand-blue/10 text-brand-blue px-3 py-1 rounded font-bold text-sm">Interna e Externa</span>
-                   </div>
-                   <i className="bi bi-building text-3xl text-brand-blue opacity-50"></i>
-                 </div>
-                 <p className="text-gray-600 font-medium mb-6">
-                   Alta resistência para pisos, paredes, garagens e ambientes úmidos.
-                 </p>
-                 <ul className="space-y-2 font-semibold text-gray-700 mb-8">
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-blue"></i> Maior aderência</li>
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-blue"></i> Para ambientes úmidos</li>
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-blue"></i> Embalagem 20kg</li>
-                 </ul>
-               </div>
-               <div className="p-6 bg-gray-50 border-t border-gray-100">
-                 <Link to="/produtos/ac-ii" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-blue transition-colors">
-                   Ver Detalhes do Produto
-                 </Link>
-               </div>
+          {/* Mobile Carousel */}
+          <div className="md:hidden relative">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out" 
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {produtosDestaque.map((produto) => (
+                  <div key={produto.id} className="min-w-full px-2">
+                    <div className={`bg-white rounded-xl overflow-hidden shadow-xl border-t-8 ${produto.borderClass} flex flex-col group relative h-full`}>
+                       <div className="p-6 flex-grow">
+                         <div className="flex justify-between items-start mb-4">
+                           <div>
+                             <h3 className="text-xl font-black text-brand-black mb-1">{produto.title}</h3>
+                             <span className={`${produto.bgLightClass} ${produto.colorClass} px-3 py-1 rounded font-bold text-sm inline-block`}>{produto.tag}</span>
+                           </div>
+                           <i className={`bi ${produto.icon} text-2xl ${produto.colorClass} opacity-50`}></i>
+                         </div>
+                         <p className="text-gray-600 font-medium mb-6 text-sm">
+                           {produto.desc}
+                         </p>
+                         <ul className="space-y-2 font-semibold text-gray-700 mb-6 text-sm">
+                           {produto.features.map((feature, i) => (
+                             <li key={i} className="flex items-center gap-2"><i className={`bi bi-check-circle-fill ${produto.colorClass}`}></i> {feature}</li>
+                           ))}
+                         </ul>
+                       </div>
+                       <div className="p-4 bg-gray-50 border-t border-gray-100 mt-auto">
+                         <Link to={produto.link} className={`block w-full py-3 text-center bg-brand-black text-white font-bold rounded ${produto.hoverClass} transition-colors`}>
+                           Ver Detalhes do Produto
+                         </Link>
+                       </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            {/* Produto 3 - AC-III */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-xl border-t-8 border-brand-red flex flex-col group relative">
-               <div className="p-8 flex-grow">
-                 <div className="flex justify-between items-start mb-6">
-                   <div>
-                     <h3 className="text-2xl font-black text-brand-black mb-1">Massa Pura AC-III</h3>
-                     <span className="bg-brand-red/10 text-brand-red px-3 py-1 rounded font-bold text-sm">9 Funções Premium</span>
-                   </div>
-                   <i className="bi bi-gem text-3xl text-brand-red opacity-50"></i>
-                 </div>
-                 <p className="text-gray-600 font-medium mb-6">
-                   Máximo desempenho para porcelanatos, mármores, granitos e piso sobre piso.
-                 </p>
-                 <ul className="space-y-2 font-semibold text-gray-700 mb-8">
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-red"></i> Piso sobre piso</li>
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-red"></i> Porcelanatos premium</li>
-                   <li className="flex items-center gap-2"><i className="bi bi-check-circle-fill text-brand-red"></i> Embalagem 20kg</li>
-                 </ul>
-               </div>
-               <div className="p-6 bg-gray-50 border-t border-gray-100">
-                 <Link to="/produtos/ac-iii" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-red transition-colors">
-                   Ver Detalhes do Produto
-                 </Link>
-               </div>
+            
+            {/* Carousel Controls */}
+            <button 
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 bg-white/90 shadow-md text-brand-black w-10 h-10 rounded-full flex items-center justify-center z-10"
+              aria-label="Anterior"
+            >
+              <i className="bi bi-chevron-left"></i>
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 bg-white/90 shadow-md text-brand-black w-10 h-10 rounded-full flex items-center justify-center z-10"
+              aria-label="Próximo"
+            >
+              <i className="bi bi-chevron-right"></i>
+            </button>
+            
+            {/* Carousel Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {produtosDestaque.map((_, index) => (
+                <button 
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${currentSlide === index ? 'bg-brand-orange' : 'bg-gray-300'}`}
+                  aria-label={`Ir para o slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -249,6 +321,65 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Massa Pronta e Rejunte */}
+      <section className="py-16 md:py-24 bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 uppercase">Massa Pronta e Rejunte</h2>
+            <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-4 md:mb-6"></div>
+            <p className="text-lg md:text-xl text-gray-600 font-medium max-w-3xl mx-auto">
+              Soluções complementares para garantir o acabamento perfeito e a agilidade que a sua obra precisa.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
+            {/* Massa Pronta */}
+            <div className="bg-brand-light rounded-xl overflow-hidden shadow-lg border-t-8 border-brand-orange flex flex-col group hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
+              <div className="h-48 md:h-56 bg-gray-200 relative overflow-hidden flex items-center justify-center">
+                 <i className="bi bi-bricks text-6xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                 <h3 className="absolute bottom-4 left-6 text-2xl font-black text-white">Massa Pronta</h3>
+              </div>
+              <div className="p-6 md:p-8 flex-grow flex flex-col">
+                <p className="text-gray-700 font-medium mb-6 text-lg">
+                  Mistura homogênea e de alta qualidade, pronta para uso. Ideal para assentamento de tijolos, blocos e pequenos reparos estruturais.
+                </p>
+                <ul className="space-y-3 font-semibold text-gray-700 mb-8 mt-auto">
+                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-orange text-xl"></i> Ganho de tempo na obra</li>
+                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-orange text-xl"></i> Redução de desperdício</li>
+                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-orange text-xl"></i> Alta resistência e aderência</li>
+                </ul>
+                <a href="https://wa.me/5521978958281" target="_blank" rel="noreferrer" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-orange transition-colors">
+                  Solicitar Orçamento
+                </a>
+              </div>
+            </div>
+
+            {/* Rejunte */}
+            <div className="bg-brand-light rounded-xl overflow-hidden shadow-lg border-t-8 border-brand-yellow flex flex-col group hover:shadow-2xl transition-all duration-300 transform md:hover:-translate-y-2">
+              <div className="h-48 md:h-56 bg-gray-200 relative overflow-hidden flex items-center justify-center">
+                 <i className="bi bi-grid-3x3-gap-fill text-6xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                 <h3 className="absolute bottom-4 left-6 text-2xl font-black text-white">Rejuntes Especiais</h3>
+              </div>
+              <div className="p-6 md:p-8 flex-grow flex flex-col">
+                <p className="text-gray-700 font-medium mb-6 text-lg">
+                  Acabamento impecável para pisos e revestimentos. Disponível em diversas cores, com fórmula premium para máxima proteção.
+                </p>
+                <ul className="space-y-3 font-semibold text-gray-700 mb-8 mt-auto">
+                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Ação antimofo e fungicida</li>
+                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Cores duradouras que não desbotam</li>
+                  <li className="flex items-center gap-3"><i className="bi bi-check-circle-fill text-brand-yellow text-xl"></i> Proteção extra contra umidade</li>
+                </ul>
+                <a href="https://wa.me/5521978958281" target="_blank" rel="noreferrer" className="block w-full py-3 text-center bg-brand-black text-white font-bold rounded hover:bg-brand-yellow hover:text-black transition-colors">
+                  Solicitar Orçamento
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Depoimentos */}
       <section className="py-16 md:py-24 bg-brand-light">
         <div className="container mx-auto px-4 lg:px-8">
