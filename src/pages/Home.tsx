@@ -60,7 +60,7 @@ export default function Home() {
     }
   ];
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center bg-no-repeat bg-brand-black text-white overflow-hidden py-16 md:py-32 lg:py-40"
@@ -113,9 +113,9 @@ export default function Home() {
       </section>
 
       {/* O que fazemos */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
             <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 md:mb-6 uppercase">O que fazemos</h2>
             <p className="text-lg md:text-xl text-gray-600 font-medium">
               Fabricamos e comercializamos argamassas para assentamento de revestimentos, oferecendo soluções robustas para obras residenciais, comerciais e profissionais da construção civil.
@@ -144,8 +144,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Seção de Vídeo Institucional / Demonstrativo */}
+      <section className="py-8 md:py-12 bg-brand-light relative">
+        <div className="container mx-auto px-4 lg:px-8">
+           <div className="text-center mb-8 md:mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-black mb-4 uppercase">Conheça a Massa Pura</h2>
+            <div className="w-16 md:w-24 h-2 bg-brand-orange mx-auto mb-4 md:mb-6"></div>
+            <p className="text-lg md:text-xl text-gray-600 font-medium max-w-3xl mx-auto">
+              Veja na prática como nossos produtos garantem o melhor resultado, rendimento e facilidade para a sua obra.
+            </p>
+          </div>
+          <div className="w-64 mx-auto rounded-2xl shadow-2xl border-b-8 border-brand-orange transform hover:-translate-y-2 transition-transform duration-500 overflow-hidden bg-brand-black">
+            <video 
+              className="w-full h-auto block"
+              controls 
+              preload="metadata"
+              poster="/fundo_novo.png"
+            >
+              <source src="/video 01.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* Produtos em Destaque */}
-      <section className="py-16 md:py-24 bg-brand-black border-y border-gray-800">
+      <section className="py-8 md:py-16 bg-brand-black border-y border-gray-800">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4 uppercase">Nossa Linha de Produtos</h2>
@@ -426,38 +450,74 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-orange relative">
-              <i className="bi bi-quote text-5xl text-brand-orange/20 absolute top-4 right-6"></i>
-              <div className="flex text-brand-yellow mb-4">
+            <a 
+              href="https://share.google/NOJErxncWCFFN4ZCh" 
+              target="_blank" 
+              rel="noreferrer"
+              className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500 relative block hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
+            >
+              <div className="absolute top-4 right-6 text-gray-300 group-hover:text-blue-500 transition-colors">
+                <i className="bi bi-google text-3xl"></i>
+              </div>
+              <div className="flex text-yellow-400 mb-4 text-lg">
                 <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
               </div>
               <p className="text-lg text-gray-700 italic font-medium mb-6">
                 "Produto com ótimo rendimento e fácil aplicação. Tenho usado na minha obra e o pedreiro elogiou bastante a qualidade."
               </p>
-              <h4 className="font-bold text-brand-black uppercase">- Cliente</h4>
-            </div>
+              <div className="flex items-center justify-between mt-auto">
+                <h4 className="font-bold text-brand-black uppercase text-sm">- Cliente</h4>
+                <span className="text-blue-500 text-xs font-bold uppercase flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Ver no Google <i className="bi bi-box-arrow-up-right"></i>
+                </span>
+              </div>
+            </a>
             
-            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-orange relative transform md:-translate-y-4">
-              <i className="bi bi-quote text-5xl text-brand-orange/20 absolute top-4 right-6"></i>
-              <div className="flex text-brand-yellow mb-4">
+            <a 
+              href="https://share.google/NOJErxncWCFFN4ZCh" 
+              target="_blank" 
+              rel="noreferrer"
+              className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500 relative block transform md:-translate-y-4 hover:-translate-y-6 hover:shadow-2xl transition-all duration-300 group"
+            >
+              <div className="absolute top-4 right-6 text-gray-300 group-hover:text-blue-500 transition-colors">
+                <i className="bi bi-google text-3xl"></i>
+              </div>
+              <div className="flex text-yellow-400 mb-4 text-lg">
                 <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
               </div>
               <p className="text-lg text-gray-700 italic font-medium mb-6">
                 "Uso a linha AC-II em obras internas e externas, sempre com bom resultado. A consistência da massa é excelente."
               </p>
-              <h4 className="font-bold text-brand-black uppercase">- Profissional Autônomo</h4>
-            </div>
+              <div className="flex items-center justify-between mt-auto">
+                <h4 className="font-bold text-brand-black uppercase text-sm">- Profissional Autônomo</h4>
+                <span className="text-blue-500 text-xs font-bold uppercase flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Ver no Google <i className="bi bi-box-arrow-up-right"></i>
+                </span>
+              </div>
+            </a>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-orange relative">
-              <i className="bi bi-quote text-5xl text-brand-orange/20 absolute top-4 right-6"></i>
-              <div className="flex text-brand-yellow mb-4">
+            <a 
+              href="https://share.google/NOJErxncWCFFN4ZCh" 
+              target="_blank" 
+              rel="noreferrer"
+              className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500 relative block hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
+            >
+              <div className="absolute top-4 right-6 text-gray-300 group-hover:text-blue-500 transition-colors">
+                <i className="bi bi-google text-3xl"></i>
+              </div>
+              <div className="flex text-yellow-400 mb-4 text-lg">
                 <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
               </div>
               <p className="text-lg text-gray-700 italic font-medium mb-6">
                 "A linha AC-III atende muito bem trabalhos com porcelanato e piso sobre piso. Secagem rápida e aderência perfeita."
               </p>
-              <h4 className="font-bold text-brand-black uppercase">- Construtor</h4>
-            </div>
+              <div className="flex items-center justify-between mt-auto">
+                <h4 className="font-bold text-brand-black uppercase text-sm">- Construtor</h4>
+                <span className="text-blue-500 text-xs font-bold uppercase flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Ver no Google <i className="bi bi-box-arrow-up-right"></i>
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
